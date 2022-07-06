@@ -3,12 +3,11 @@ import axios from "axios"
 import styled from "styled-components"
 import UserContext from "../UserContext"
 import { useContext } from "react"
-export function GerarTransacoes() {
+export function GerarTransacoes({setLista}) {
     const userLocalSerializada = localStorage.getItem("user")
     const userLocal = JSON.parse(userLocalSerializada)
 
     const [listaTransacoes, setListaTransacoes] = useState([])
-    const [user, setUser] = useState({})
     const [itemDeletado, setItemDeletado] = useState()
     const [saldo, setSaldo] = useState()
 
@@ -24,7 +23,7 @@ export function GerarTransacoes() {
     }
 
 
-    const URLAPI = 'http://localhost:5000/mywallet'
+    const URLAPI = 'https://git.heroku.com/my-wallet-projeto-13-driven.git/mywallet'
 
     useEffect(() => {
         const promiseGet = axios.get(URLAPI,autorizacao)
@@ -33,6 +32,12 @@ export function GerarTransacoes() {
     }, [controle])
 function gerarLista(response){
     setListaTransacoes(response.data)
+    if(listaTransacoes.length===0){
+        setLista(true)
+    }
+    if(listaTransacoes.length!==0){
+        setLista(false)
+    }
     calcularSaldo()
 }
 console.log(listaTransacoes)

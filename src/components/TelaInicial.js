@@ -1,9 +1,10 @@
 import axios from "axios"
-import { useContext, useEffect } from "react"
+import { useContext, useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom"
 import styled from 'styled-components';
 import UserContext from '../UserContext'
 import { GerarTransacoes } from "./GerarTransacoes.js";
+import SemLista from "./SemLIsta";
 
 export default function TelaInicial() {
 
@@ -11,7 +12,7 @@ export default function TelaInicial() {
     const userLocal = JSON.parse(userLocalSerializada)
 
     const { token, nome } = userLocal
-
+    const [lista, setLista] =useState(true)
     const navigate = useNavigate()
 
     const autorizacao = {
@@ -43,7 +44,7 @@ export default function TelaInicial() {
                 <h1>Olá, {nome}</h1>
                 <button onClick={logout}><ion-icon name="exit-outline"></ion-icon></button>
             </Cabecalho>
-            < GerarTransacoes />
+           {!lista?< GerarTransacoes lista={lista} setLista={setLista} />:< SemLista/>}
             <ContainerButton>
                 <Adicionar onClick={IrParaNovaEntrada}>
                     <Botao>
