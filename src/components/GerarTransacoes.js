@@ -23,7 +23,7 @@ export function GerarTransacoes({setLista}) {
     }
 
 
-    const URLAPI = 'https://git.heroku.com/backmywalletprojeto13.git/mywallet'
+    const URLAPI = 'https://my-wallet-projeto-13-driven.herokuapp.com/mywallet'
 
     useEffect(() => {
         const promiseGet = axios.get(URLAPI,autorizacao)

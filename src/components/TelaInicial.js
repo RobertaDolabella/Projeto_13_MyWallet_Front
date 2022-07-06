@@ -21,7 +21,7 @@ export default function TelaInicial() {
         }
     }
 
-    const POST_URL = 'http://localhost:5000/logout'
+    const POST_URL = 'https://my-wallet-projeto-13-driven.herokuapp.com/logout'
 
 
     function IrParaNovaEntrada() {

@@ -56,7 +56,7 @@ export default function TelaCadastro(){
 
         console.log(infoCadastro)
     
-        const POST_URL = 'https://git.heroku.com/backmywalletprojeto13.git/cadastrar'
+        const POST_URL = 'https://my-wallet-projeto-13-driven.herokuapp.com/cadastrar'
         const promiseCadastrar = axios.post(POST_URL, infoCadastro)
     
         promiseCadastrar.then(()=>VoltarParaLogin())
