@@ -44,7 +44,7 @@ export default function TelaInicial() {
                 <h1>Olá, {nome}</h1>
                 <button onClick={logout}><ion-icon name="exit-outline"></ion-icon></button>
             </Cabecalho>
-           {!lista?< GerarTransacoes lista={lista} setLista={setLista} />:< SemLista/>}
+         < GerarTransacoes />
             <ContainerButton>
                 <Adicionar onClick={IrParaNovaEntrada}>
                     <Botao>
