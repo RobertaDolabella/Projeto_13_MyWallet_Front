@@ -13,7 +13,7 @@ export default function TelaLogin() {
     const navigate = useNavigate();
 
     const userInfo = { email, senha }
-    const POST_URL = 'https://git.heroku.com/my-wallet-projeto-13-driven.git/login'
+    const POST_URL = 'https://git.heroku.com/backmywalletprojeto13.git/login'
 
     function enviarDadosUser() {
 

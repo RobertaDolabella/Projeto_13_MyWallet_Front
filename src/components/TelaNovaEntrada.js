@@ -13,7 +13,7 @@ export default function TelaNovaEntrada() {
 
     const navigate = useNavigate()
 
-    const POST_URL = 'https://git.heroku.com/my-wallet-projeto-13-driven.git/adicionar'
+    const POST_URL = 'https://git.heroku.com/backmywalletprojeto13.git/adicionar'
 
     const userLocalSerializada = localStorage.getItem("user")
     const userLocal = JSON.parse(userLocalSerializada)
